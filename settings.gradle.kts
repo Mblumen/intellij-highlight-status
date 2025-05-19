@@ -1,1 +1,1 @@
-rootProject.name = "highlight"
+rootProject.name = "Highlight Status"

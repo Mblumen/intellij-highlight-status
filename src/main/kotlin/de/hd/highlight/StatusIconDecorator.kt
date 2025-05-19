@@ -21,6 +21,9 @@ class StatusIconDecorator : ProjectViewNodeDecorator {
         val psiFile = PsiManager.getInstance(project).findFile(virtualFile) ?: return
         val text = psiFile.text
 
+        if(text.contains("// EXCLUDE FROM STATUS")) {
+            return
+        }
         if (text.contains("// STATUS: DONE")) {
             if(text.contains("// ICON")) {
                 data.setIcon(DoneIcon)
